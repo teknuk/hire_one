@@ -1,0 +1,301 @@
+{
+	"variables": [],
+	"info": {
+		"name": "HireOne",
+		"_postman_id": "49045964-dc95-3d49-4167-4433d0ce7dd0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "APPLICANTS",
+			"description": "",
+			"item": [
+				{
+					"name": "GET SINGLE",
+					"request": {
+						"url": "{{host}}/applicants/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\"type\":\"projects\", \"attributes\":{\"name\":\"api project\", \"description\":\"desc of api project\"}}",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"request": {
+						"url": "{{host}}/applicants",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\"type\":\"projects\", \"attributes\":{\"name\":\"api project\", \"description\":\"desc of api project\"}}",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE Apply a JOB",
+					"request": {
+						"url": "{{host}}/applicants",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\"data\": {\n     \"type\":\"applicants\",\n     \"relationships\": { \"job\": { \"data\": { \"type\": \"jobs\", \"id\": \"1\" } } },\n     \"attributes\": {\n        \"name\":\"Foo Bar\",\n        \"email\":\"foobar@example.com\",\n        \"gender\":\"male\",\n        \"date-of-birth\":\"1990-08-18\",\n        \"contact\":\"03215110224\",\n        \"applied-at\":\"2016-08-15\",\n        \"cover-letter\":\"\",\n        \"resume\":\"\",\n        \"linkedin-profile\":\"http://linkedin.com/foo\",\n        \"qualification\":\"BSCS\",\n        \"experience\":\"\",\n        \"current-salary\":\"\",\n        \"expected-salary\":\"40000\",\n        \"current-position\":\"\",\n        \"notes\":\"Notes...\",\n        \"extra\":\"Extra things....\"\n         }\n     }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"url": "{{host}}/applicants/1",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\"data\": {\n     \"type\":\"applicants\",\n     \"id\":\"1\",\n     \"relationships\": { \"job\": { \"data\": { \"type\": \"jobs\", \"id\": \"1\" } } },\n     \"attributes\": {\n        \"name\":\"Foo Bar\",\n        \"email\":\"foobar@example.com\",\n        \"gender\":\"male\",\n        \"date-of-birth\":\"1990-08-18\",\n        \"contact\":\"03215110224\",\n        \"applied-at\":\"2016-08-15\",\n        \"cover-letter\":\"\",\n        \"resume\":\"\",\n        \"linkedin-profile\":\"http://linkedin.com/foo\",\n        \"qualification\":\"BSCS\",\n        \"experience\":\"\",\n        \"current-salary\":\"\",\n        \"expected-salary\":\"40000\",\n        \"current-position\":\"\",\n        \"notes\":\"Notes...\",\n        \"extra\":\"Extra things....\"\n         }\n     }\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELEATE",
+					"request": {
+						"url": "{{host}}/applicants/2",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "JOBS",
+			"description": "",
+			"item": [
+				{
+					"name": "GET SINGLE JOB",
+					"request": {
+						"url": "{{host}}/jobs/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\"type\":\"projects\", \"attributes\":{\"name\":\"api project\", \"description\":\"desc of api project\"}}",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL JOBS",
+					"request": {
+						"url": "{{host}}/jobs",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\"type\":\"projects\", \"attributes\":{\"name\":\"api project\", \"description\":\"desc of api project\"}}",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE A JOB",
+					"request": {
+						"url": "{{host}}/jobs",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\"data\": {\n     \"type\":\"jobs\",\n     \"attributes\": {\n        \"title\":\"Test \",\n        \"description\":\"Desc of test\",\n        \"position\":\"Software Engineer\",\n        \"job-type\":\"Full time\",\n        \"responsibilities\":\"You are responisble for...\",\n        \"total-positions\":2,\n        \"min-experience\":\"\",\n        \"minimum-education\":\"BS\",\n        \"job-location\":\"DHA Lahore\",\n        \"career-level\":\"Entry Level\",\n        \"apply-before\":\"2016-12-31\",\n        \"job-shift\":\"First Time\",\n        \"tags\":\"html, css, javascript\",\n        \"posted-at\":\"2016-08-14\",\n        \"min-salary\":30000,\n        \"max-salary\":100000,\n        \"is-active\":0\n         }\n     }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update A JOB",
+					"request": {
+						"url": "{{host}}/jobs/1",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\"data\": {\n     \"type\":\"jobs\",\n     \"id\":\"1\",\n     \"attributes\": {\n        \"title\":\"Test 2a\",\n        \"description\":\"Desc of test\",\n        \"position\":\"Software Engineer\",\n        \"job-type\":\"Full time\",\n        \"responsibilities\":\"You are responisble for...\",\n        \"total-positions\":2,\n        \"min-experience\":\"\",\n        \"minimum-education\":\"BS\",\n        \"job-location\":\"DHA Lahore\",\n        \"career-level\":\"Entry Level\",\n        \"apply-before\":\"2016-12-31\",\n        \"job-shift\":\"First Time\",\n        \"tags\":\"html, css, javascript\",\n        \"posted-at\":\"2016-08-14\",\n        \"min-salary\":30000,\n        \"max-salary\":100000,\n        \"is-active\":0\n         }\n     }\n\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELEATE A JOB",
+					"request": {
+						"url": "{{host}}/jobs/2",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -18,7 +18,13 @@ gem 'puma', '~> 3.0'
 # gem 'capistrano-rails', group: :development
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
+
+# Annotates Rails/ActiveRecord Models, routes, fixtures, and others based on the database schema.
+gem 'annotate'
+
+# provides a framework for developing a server that complies with the JSON API specification.
+gem 'jsonapi-resources', '~> 0.8.0.beta2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
